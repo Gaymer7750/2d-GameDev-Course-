@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfrp0km2xjcr6"]
+[gd_scene load_steps=8 format=3 uid="uid://dfrp0km2xjcr6"]
 
 [ext_resource type="Script" path="res://game.gd" id="2"]
 [ext_resource type="TileSet" uid="uid://crkgfdw1y80hc" path="res://levels/rooms/tileset_bridges.tres" id="2_vnf5n"]
 [ext_resource type="TileSet" uid="uid://cqb2wtrubw0n6" path="res://levels/rooms/tileset_invisible_walls.tres" id="3"]
+[ext_resource type="PackedScene" uid="uid://dds7yrrx56gcy" path="res://player/player.tscn" id="4_yytar"]
+[ext_resource type="PackedScene" uid="uid://cu2rb5dl4ljte" path="res://levels/rooms/room_a.tscn" id="5_noiiq"]
+[ext_resource type="PackedScene" uid="uid://dgayuh42w4v6u" path="res://levels/rooms/room_b.tscn" id="6_undam"]
+[ext_resource type="PackedScene" uid="uid://cq0mmphkbrvmm" path="res://levels/rooms/room_c.tscn" id="7_kkxcl"]
 
 [node name="Start" type="Node2D"]
+position = Vector2(1, 0)
 script = ExtResource("2")
 
 [node name="Bridges" type="TileMap" parent="."]
@@ -18,3 +23,15 @@ tile_set = ExtResource("3")
 format = 2
 layer_0/name = "Invisible walls"
 metadata/_edit_lock_ = true
+
+[node name="Player" parent="." instance=ExtResource("4_yytar")]
+position = Vector2(-1, 0)
+
+[node name="RoomA" parent="." instance=ExtResource("5_noiiq")]
+position = Vector2(-385, -256)
+
+[node name="RoomB" parent="." instance=ExtResource("6_undam")]
+position = Vector2(1279, -256)
+
+[node name="RoomC" parent="." instance=ExtResource("7_kkxcl")]
+position = Vector2(1023, -1920)
