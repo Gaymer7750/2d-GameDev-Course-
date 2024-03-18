@@ -6,3 +6,8 @@
 [node name="ship" type="Sprite2D"]
 texture = ExtResource("1_1nq4p")
 script = ExtResource("2_5y5y0")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
