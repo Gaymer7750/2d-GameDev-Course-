@@ -9,3 +9,4 @@ script = ExtResource("1_yudxs")
 autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(963, 537)
