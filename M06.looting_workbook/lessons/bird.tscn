@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://fm3p67dppnvr"]
+
+[ext_resource type="Script" path="res://lessons/bird.gd" id="1_kkdf4"]
+[ext_resource type="Texture2D" uid="uid://bwhshkk62k3bh" path="res://assets/bird/sparrow.png" id="2_m8th0"]
+[ext_resource type="Shader" path="res://assets/bird/shadow.gdshader" id="3_h7fck"]
+[ext_resource type="Texture2D" uid="uid://b01mnp8qxfbh7" path="res://assets/small_circle.png" id="4_k232c"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pxa35"]
+shader = ExtResource("3_h7fck")
+
+[node name="Bird" type="Node2D"]
+script = ExtResource("1_kkdf4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 2
+position = Vector2(6, -24)
+texture = ExtResource("2_m8th0")
+
+[node name="WaitTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(0.00784314, 0.00784314, 0.00784314, 0.627451)
+self_modulate = Color(0, 0, 0, 0.486275)
+visibility_layer = 2
+material = SubResource("ShaderMaterial_pxa35")
+use_parent_material = true
+position = Vector2(0, -1)
+scale = Vector2(1, 0.46875)
+texture = ExtResource("4_k232c")
